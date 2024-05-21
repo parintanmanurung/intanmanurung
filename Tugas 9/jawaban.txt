@@ -1,0 +1,39 @@
+Nama : Parintan Manurung
+Nim  : 2155201024
+
+Soal No 1
+CREATE DATABASE myshop;
+
+Soal No 2
+A. users
+CREATE TABLE users ( id int PRIMARY KEY AUTO_INCREMENT, name varchar(255) not null, email varchar(255) not null, password varchar(255) not null );
+
+B. categories
+CREATE TABLE categories ( id int PRIMARY KEY AUTO_INCREMENT, name varchar(255) not null );
+
+c. items
+CREATE TABLE items ( id int PRIMARY KEY AUTO_INCREMENT, name varchar(255) not null, description varchar (255) not null, price int not null, stock int not null, FOREIGN KEY (category_id) REFERENCES categories (id) );
+
+Soal No 3
+A. users
+INSERT INTO users (name, email, password) VALUES ("Parintan Manurung", "john@doe.com", "john123"), ("Jane Doe","jane@doe.com","jenita123");
+
+B. categories
+INSERT INTO categories (name) VALUES ("gadget"), ("cloth"),("men"),("women"),("branded");
+
+c. items
+INSERT INTO items (name, description, price, stock, category_id) VALUES ("Sumsang b50", "hape keren dari merek sumsang", "4000000","100","1"), ("Uniklooh","baju keren dari brand ternama","500000","50","2"), ("IMHO Watch","jam tangan anak yang jujur banget","2000000","10","1");
+
+Soal No 3
+A. Mengambil Data users
+SELECT id, name, email FROM `users`;
+
+B. Mengambil Data Items
+SELECT * FROM `items` WHERE price > 600000;
+SELECT * FROM `items` WHERE name LIKE 'un%';
+
+C. Menampilkan Data Items Join Dengan Kategori
+select items.*, categories.name from items inner join categories on items.category_id = categories.id;
+
+Soal No 5
+UPDATE items SET price = 2500000 WHERE id = 1;
