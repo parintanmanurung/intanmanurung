@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,6 @@ Route::get('/table', function() {
     return view ('pages.table');
 });
 
-Route::get('/data-table', function() {
-    return view ('pages.data-table');
-});
+Route::resource('cast', CastController::class)
+
+;
